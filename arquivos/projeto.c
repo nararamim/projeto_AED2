@@ -2,6 +2,8 @@
 #include <stdlib.h>
 
 int main(){
-    printf("Oi!")
-    return 0;
+    srand(100);
+    for(int i= 0; i<100; i++){
+        printf("%d \n",rand() % 500);
+    }
 }
