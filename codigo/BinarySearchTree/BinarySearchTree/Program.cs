@@ -28,7 +28,7 @@ namespace BinarySearchTree
 
             string result = b.Search(element);
 
-            Console.WriteLine("The repository of the requeste element is:");
+            Console.WriteLine("The repository of the requested element is:");
             Console.WriteLine(result);
 
             Console.ReadLine();
