@@ -1,18 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AVLTree 
 {
-    public sealed class AvlNode<TKey, TValue>
+    public sealed class AvlNode<@int, @string>
 	{
-		public AvlNode<TKey, TValue> Parent;
-		public AvlNode<TKey, TValue> Left;
-		public AvlNode<TKey, TValue> Right;
-		public TKey Key;
-		public TValue Value;
+		public AvlNode<@int, @string> Parent;
+		public AvlNode<@int, @string> Left;
+		public AvlNode<@int, @string> Right;
+		public @int Key;
+		public @string Value;
 		public int Balance;
     }
 

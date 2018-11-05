@@ -1,35 +1,31 @@
 
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AVLTree 
 {
-    public class AvlTree<TKey, TValue> : IEnumerable<AvlNode<TKey, TValue>>
+    public class AvlTree<@int, @string> : IEnumerable<AvlNode<@int, @string>>
 	{
-		private IComparer<TKey> _comparer;
-		private AvlNode<TKey, TValue> _root;
+		private IComparer<@int> _comparer;
+		private AvlNode<@int, @string> _root;
 
-		public AvlTree(IComparer<TKey> comparer){_comparer = comparer;}
+		public AvlTree(IComparer<@int> comparer){_comparer = comparer;}
 
-		public AvlTree() : this(Comparer<TKey>.Default){}
+		public AvlTree() : this(Comparer<@int>.Default){}
 
-		public AvlNode<TKey, TValue> Root
+		public AvlNode<@int, @string> Root
 		{
 			get {return _root;}
 		}
 
-		public IEnumerator<AvlNode<TKey, TValue>> GetEnumerator()
+		public IEnumerator<AvlNode<@int, @string>> GetEnumerator()
 		{
-			return new AvlNodeEnumerator<TKey, TValue>(_root);
+			return new AvlNodeEnumerator<@int, @string>(_root);
 		}
 
-		public bool Search(TKey key, out TValue value)
+		public bool Search(@int key, out @string value)
 		{
-			AvlNode<TKey, TValue> node = _root;
+			AvlNode<@int, @string> node = _root;
 
 			while (node != null)
 			{
@@ -42,13 +38,13 @@ namespace AVLTree
 				}
 			}
 
-			value = default(TValue);
+			value = default(@string);
 			return false;
 		} //search
 
-		public bool Insert(TKey key, TValue value)
+		public bool Insert(@int key, @string value)
 		{
-			AvlNode<TKey, TValue> node = _root;
+			AvlNode<@int, @string> node = _root;
 
 			while (node != null)
 			{
@@ -56,11 +52,11 @@ namespace AVLTree
 
 				if (compare < 0)
 				{
-					AvlNode<TKey, TValue> left = node.Left;
+					AvlNode<@int, @string> left = node.Left;
 
 					if (left == null)
 					{
-						node.Left = new AvlNode<TKey, TValue> { Key = key, Value = value, Parent = node };
+						node.Left = new AvlNode<@int, @string> { Key = key, Value = value, Parent = node };
 						InsertBalance(node, 1);
 						return true;
 					}
@@ -68,11 +64,11 @@ namespace AVLTree
 				}
 				else if (compare > 0)
 				{
-					AvlNode<TKey, TValue> right = node.Right;
+					AvlNode<@int, @string> right = node.Right;
 
 					if (right == null)
 					{
-						node.Right = new AvlNode<TKey, TValue> { Key = key, Value = value, Parent = node };
+						node.Right = new AvlNode<@int, @string> { Key = key, Value = value, Parent = node };
 						InsertBalance(node, -1);
 						return true;
 					}
@@ -85,11 +81,11 @@ namespace AVLTree
 				}
 			} //while
 			
-			_root = new AvlNode<TKey, TValue> { Key = key, Value = value };
+			_root = new AvlNode<@int, @string> { Key = key, Value = value };
 			return true;
 		} //insert
 
-		private void InsertBalance(AvlNode<TKey, TValue> node, int balance)
+		private void InsertBalance(AvlNode<@int, @string> node, int balance)
 		{
 			while (node != null)
 			{
@@ -109,18 +105,18 @@ namespace AVLTree
 					return;
 				}
 
-				AvlNode<TKey, TValue> parent = node.Parent;
+				AvlNode<@int, @string> parent = node.Parent;
 
 				if (parent != null) balance = parent.Left == node ? 1 : -1;
 				node = parent;
 			} //while
 		} //insertBalance
 
-		private AvlNode<TKey, TValue> RotateLeft(AvlNode<TKey, TValue> node)
+		private AvlNode<@int, @string> RotateLeft(AvlNode<@int, @string> node)
 		{
-			AvlNode<TKey, TValue> right = node.Right;
-			AvlNode<TKey, TValue> rightLeft = right.Left;
-			AvlNode<TKey, TValue> parent = node.Parent;
+			AvlNode<@int, @string> right = node.Right;
+			AvlNode<@int, @string> rightLeft = right.Left;
+			AvlNode<@int, @string> parent = node.Parent;
 
 			right.Parent = parent;
 			right.Left = node;
@@ -138,11 +134,11 @@ namespace AVLTree
 			return right;
 		} //rotateLeft
 
-		private AvlNode<TKey, TValue> RotateRight(AvlNode<TKey, TValue> node)
+		private AvlNode<@int, @string> RotateRight(AvlNode<@int, @string> node)
 		{
-			AvlNode<TKey, TValue> left = node.Left;
-			AvlNode<TKey, TValue> leftRight = left.Right;
-			AvlNode<TKey, TValue> parent = node.Parent;
+			AvlNode<@int, @string> left = node.Left;
+			AvlNode<@int, @string> leftRight = left.Right;
+			AvlNode<@int, @string> parent = node.Parent;
 
 			left.Parent = parent;
 			left.Right = node;
@@ -160,13 +156,13 @@ namespace AVLTree
 			return left;
 		} //rotateRight
 
-		private AvlNode<TKey, TValue> RotateLeftRight(AvlNode<TKey, TValue> node)
+		private AvlNode<@int, @string> RotateLeftRight(AvlNode<@int, @string> node)
 		{
-			AvlNode<TKey, TValue> left = node.Left;
-			AvlNode<TKey, TValue> leftRight = left.Right;
-			AvlNode<TKey, TValue> parent = node.Parent;
-			AvlNode<TKey, TValue> leftRightRight = leftRight.Right;
-			AvlNode<TKey, TValue> leftRightLeft = leftRight.Left;
+			AvlNode<@int, @string> left = node.Left;
+			AvlNode<@int, @string> leftRight = left.Right;
+			AvlNode<@int, @string> parent = node.Parent;
+			AvlNode<@int, @string> leftRightRight = leftRight.Right;
+			AvlNode<@int, @string> leftRightLeft = leftRight.Left;
 
 			leftRight.Parent = parent;
 			node.Left = leftRightRight;
@@ -204,13 +200,13 @@ namespace AVLTree
 			return leftRight;
 		} //rotateLeftRight
 
-		private AvlNode<TKey, TValue> RotateRightLeft(AvlNode<TKey, TValue> node)
+		private AvlNode<@int, @string> RotateRightLeft(AvlNode<@int, @string> node)
 		{
-			AvlNode<TKey, TValue> right = node.Right;
-			AvlNode<TKey, TValue> rightLeft = right.Left;
-			AvlNode<TKey, TValue> parent = node.Parent;
-			AvlNode<TKey, TValue> rightLeftLeft = rightLeft.Left;
-			AvlNode<TKey, TValue> rightLeftRight = rightLeft.Right;
+			AvlNode<@int, @string> right = node.Right;
+			AvlNode<@int, @string> rightLeft = right.Left;
+			AvlNode<@int, @string> parent = node.Parent;
+			AvlNode<@int, @string> rightLeftLeft = rightLeft.Left;
+			AvlNode<@int, @string> rightLeftRight = rightLeft.Right;
 
 			rightLeft.Parent = parent;
 			node.Right = rightLeftLeft;
@@ -248,9 +244,9 @@ namespace AVLTree
 			return rightLeft;
 		} //rotateRightLeft
 
-		public bool Delete(TKey key)
+		public bool Delete(@int key)
 		{
-			AvlNode<TKey, TValue> node = _root;
+			AvlNode<@int, @string> node = _root;
 
 			while (node != null)
 			{
@@ -258,8 +254,8 @@ namespace AVLTree
 				else if (_comparer.Compare(key, node.Key) > 0) node = node.Right;
 				else
 				{
-					AvlNode<TKey, TValue> left = node.Left;
-					AvlNode<TKey, TValue> right = node.Right;
+					AvlNode<@int, @string> left = node.Left;
+					AvlNode<@int, @string> right = node.Right;
 
 					if (left == null)
 					{
@@ -268,7 +264,7 @@ namespace AVLTree
 							if (node == _root) _root = null;
 							else
 							{
-								AvlNode<TKey, TValue> parent = node.Parent;
+								AvlNode<@int, @string> parent = node.Parent;
 
 								if (parent.Left == node)
 								{
@@ -295,11 +291,11 @@ namespace AVLTree
 					}
 					else
 					{
-						AvlNode<TKey, TValue> successor = right;
+						AvlNode<@int, @string> successor = right;
 
 						if (successor.Left == null)
 						{
-							AvlNode<TKey, TValue> parent = node.Parent;
+							AvlNode<@int, @string> parent = node.Parent;
 
 							successor.Parent = parent;
 							successor.Left = left;
@@ -319,9 +315,9 @@ namespace AVLTree
 						{
 							while (successor.Left != null) successor = successor.Left;
 
-							AvlNode<TKey, TValue> parent = node.Parent;
-							AvlNode<TKey, TValue> successorParent = successor.Parent;
-							AvlNode<TKey, TValue> successorRight = successor.Right;
+							AvlNode<@int, @string> parent = node.Parent;
+							AvlNode<@int, @string> successorParent = successor.Parent;
+							AvlNode<@int, @string> successorRight = successor.Right;
 
 							if (successorParent.Left == successor) successorParent.Left = successorRight;
 							else successorParent.Right = successorRight;
@@ -351,7 +347,7 @@ namespace AVLTree
 			return false;
 		} //delete
 
-		private void DeleteBalance(AvlNode<TKey, TValue> node, int balance)
+		private void DeleteBalance(AvlNode<@int, @string> node, int balance)
 		{
 			while (node != null)
 			{
@@ -377,17 +373,17 @@ namespace AVLTree
 				}
 				else if (balance != 0) return;
 
-				AvlNode<TKey, TValue> parent = node.Parent;
+				AvlNode<@int, @string> parent = node.Parent;
 
 				if (parent != null) balance = parent.Left == node ? -1 : 1;
 				node = parent;
 			} //while
 		} //deleteBalance
 
-		private static void Replace(AvlNode<TKey, TValue> target, AvlNode<TKey, TValue> source)
+		private static void Replace(AvlNode<@int, @string> target, AvlNode<@int, @string> source)
 		{
-			AvlNode<TKey, TValue> left = source.Left;
-			AvlNode<TKey, TValue> right = source.Right;
+			AvlNode<@int, @string> left = source.Left;
+			AvlNode<@int, @string> right = source.Right;
 
 			target.Balance = source.Balance;
 			target.Key = source.Key;

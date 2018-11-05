@@ -1,20 +1,16 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AVLTree
 {
-	public sealed class AvlNodeEnumerator<TKey, TValue> : IEnumerator<AvlNode<TKey, TValue>>
+	public sealed class AvlNodeEnumerator<@int, @string> : IEnumerator<AvlNode<@int, @string>>
 	{
-		private AvlNode<TKey, TValue> _root;
+		private AvlNode<@int, @string> _root;
 		private Action _action;
-		private AvlNode<TKey, TValue> _current;
-		private AvlNode<TKey, TValue> _right;
+		private AvlNode<@int, @string> _current;
+		private AvlNode<@int, @string> _right;
 
-		public AvlNodeEnumerator(AvlNode<TKey, TValue> root)
+		public AvlNodeEnumerator(AvlNode<@int, @string> root)
 		{
 			_right = _root = root;
 			_action = _root == null ? Action.End : Action.Right;
@@ -36,7 +32,7 @@ namespace AVLTree
 				case Action.Parent:
 					while (_current.Parent != null)
 					{
-						AvlNode<TKey, TValue> previous = _current;
+						AvlNode<@int, @string> previous = _current;
 						_current = _current.Parent;
 
 						if (_current.Left == previous)
@@ -59,7 +55,7 @@ namespace AVLTree
 			_action = _root == null ? Action.End : Action.Right;
 		}
 
-		public AvlNode<TKey, TValue> Current
+		public AvlNode<@int, @string> Current
 		{
 			get {return _current;}
 		}
