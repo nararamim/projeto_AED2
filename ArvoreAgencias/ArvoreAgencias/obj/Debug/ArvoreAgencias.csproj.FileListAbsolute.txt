@@ -1,0 +1,7 @@
+C:\Users\Denes\Documents\Visual Studio 2017\ArvoreAgencias\ArvoreAgencias\obj\Debug\ArvoreAgencias.csprojAssemblyReference.cache
+C:\Users\Denes\Documents\Visual Studio 2017\ArvoreAgencias\ArvoreAgencias\obj\Debug\ArvoreAgencias.csproj.CoreCompileInputs.cache
+C:\Users\Denes\Documents\Visual Studio 2017\ArvoreAgencias\ArvoreAgencias\bin\Debug\ArvoreAgencias.exe.config
+C:\Users\Denes\Documents\Visual Studio 2017\ArvoreAgencias\ArvoreAgencias\bin\Debug\ArvoreAgencias.exe
+C:\Users\Denes\Documents\Visual Studio 2017\ArvoreAgencias\ArvoreAgencias\bin\Debug\ArvoreAgencias.pdb
+C:\Users\Denes\Documents\Visual Studio 2017\ArvoreAgencias\ArvoreAgencias\obj\Debug\ArvoreAgencias.exe
+C:\Users\Denes\Documents\Visual Studio 2017\ArvoreAgencias\ArvoreAgencias\obj\Debug\ArvoreAgencias.pdb
