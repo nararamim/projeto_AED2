@@ -1,0 +1,11 @@
+C:\Users\nara-\Documents\projeto_AED2\codigo\BinarySearchTree\BinarySearchTree\bin\Debug\netcoreapp2.0\BinarySearchTree.deps.json
+C:\Users\nara-\Documents\projeto_AED2\codigo\BinarySearchTree\BinarySearchTree\bin\Debug\netcoreapp2.0\BinarySearchTree.runtimeconfig.json
+C:\Users\nara-\Documents\projeto_AED2\codigo\BinarySearchTree\BinarySearchTree\bin\Debug\netcoreapp2.0\BinarySearchTree.runtimeconfig.dev.json
+C:\Users\nara-\Documents\projeto_AED2\codigo\BinarySearchTree\BinarySearchTree\bin\Debug\netcoreapp2.0\BinarySearchTree.dll
+C:\Users\nara-\Documents\projeto_AED2\codigo\BinarySearchTree\BinarySearchTree\bin\Debug\netcoreapp2.0\BinarySearchTree.pdb
+C:\Users\nara-\Documents\projeto_AED2\codigo\BinarySearchTree\BinarySearchTree\obj\Debug\netcoreapp2.0\BinarySearchTree.csprojAssemblyReference.cache
+C:\Users\nara-\Documents\projeto_AED2\codigo\BinarySearchTree\BinarySearchTree\obj\Debug\netcoreapp2.0\BinarySearchTree.csproj.CoreCompileInputs.cache
+C:\Users\nara-\Documents\projeto_AED2\codigo\BinarySearchTree\BinarySearchTree\obj\Debug\netcoreapp2.0\BinarySearchTree.AssemblyInfoInputs.cache
+C:\Users\nara-\Documents\projeto_AED2\codigo\BinarySearchTree\BinarySearchTree\obj\Debug\netcoreapp2.0\BinarySearchTree.AssemblyInfo.cs
+C:\Users\nara-\Documents\projeto_AED2\codigo\BinarySearchTree\BinarySearchTree\obj\Debug\netcoreapp2.0\BinarySearchTree.dll
+C:\Users\nara-\Documents\projeto_AED2\codigo\BinarySearchTree\BinarySearchTree\obj\Debug\netcoreapp2.0\BinarySearchTree.pdb
