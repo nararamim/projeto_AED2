@@ -36,10 +36,13 @@ namespace AVLTree
         {
             ListaAgencias = new List<string>();
             string arquivo = System.IO.File.ReadAllText(path).Trim();
-            //Console.WriteLine(arquivo);
 
             ListaAgencias = arquivo.Split('\n').ToList();
-            //Console.WriteLine(ListaAgencias[1]);
+        }
+
+        public int Count()
+        {
+            return ListaAgencias.Count();
         }
     }
 }

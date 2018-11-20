@@ -47,9 +47,6 @@
     <Compile Include="ArvoreAVL\AVLNodeEnumerator.cs" />
     <Compile Include="ArvoreAVL\AVLTree.cs" />
     <Compile Include="ArvoreAVL\InicializaArvoreAgencias.cs" />
-    <Compile Include="BuscaBinaria\BinaryTree.cs" />
-    <Compile Include="BuscaBinaria\Node.cs" />
-    <Compile Include="Interface.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
