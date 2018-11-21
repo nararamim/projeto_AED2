@@ -17,12 +17,15 @@ namespace AVLTree
         public AvlTree<int, string> Inicializacao()
         {
             Root = new AvlTree<int, string>();
+            String caminho = @"C:\Users\nara-\Documents\projeto_AED2\arquivos\contas\";
 
             try
             {
                 foreach (var node in ListaAgencias)
                 {
-                    Root.Insert(Convert.ToInt32(node), string.Empty);
+                    int aux = (int)(2 * Convert.ToInt32(node) / 0.00037) + 1;
+                  
+                    Root.Insert(Convert.ToInt32(node), caminho + aux + ".txt");
                 }
                 return Root;
             }

@@ -36,7 +36,7 @@ namespace AVLTree
             string agencia, conta, diretorio;
             int opcao;
             AvlNode<int, string> node = new AvlNode<int, string>();
-            ArvoreAgencias arvore = new ArvoreAgencias(@"C:\Users\Denes\Downloads\arquivos\agencias");
+            ArvoreAgencias arvore = new ArvoreAgencias(@"C:\Users\nara-\Documents\projeto_AED2\arquivos\agencias");
             AvlTree<int, string> raiz = arvore.Inicializacao();
 
 
@@ -58,31 +58,39 @@ namespace AVLTree
                     case 1:
                         Console.WriteLine("Insira a agência que deseja buscar:");
                         agencia = Console.ReadLine().Trim();
-                        Console.WriteLine("Insira a conta vinculada a esta agência que deseja buscar:");
-                        conta = Console.ReadLine().Trim();
-
                         node = raiz.Search(int.Parse(agencia));
-                        diretorio = node.Value;
-                        //diretorio = @"C:\Users\Denes\Downloads\arquivos\contas\0.txt";
-                        BuscaArquivo(conta, diretorio);
 
-                        if (listaCorrespondencia.Count > 0)
+                        if (node == null) Console.WriteLine("Ops! Não encontramos essa agencia");
+                        else
                         {
-                            foreach (var item in listaCorrespondencia)
+                            Console.WriteLine("Insira a conta vinculada a esta agência que deseja buscar:");
+                            conta = Console.ReadLine().Trim();
+
+                            diretorio = node.Value;
+                            BuscaArquivo(conta, diretorio);
+
+                            if (listaCorrespondencia.Count > 0)
                             {
-                                Console.WriteLine("O cliente vinculado a essa conta é " + retornaCliente(item) + ".\n");
+                                foreach (var item in listaCorrespondencia)
+                                {
+                                    Console.WriteLine("O cliente vinculado a essa conta é " + retornaCliente(item) + ".\n");
+                                }
                             }
+                            else Console.WriteLine("Não há clientes que possuem o número de conta procurado.");
                         }
-                        else Console.WriteLine("Não há clientes que possuem o número de conta procurado.");
                         break;
                     case 2:
                         Console.WriteLine("Insira a agência:");
                         agencia = Console.ReadLine().Trim();
                         node = raiz.Search(int.Parse(agencia));
-                        diretorio = node.Value;
-                        //diretorio = @"C:\Users\Denes\Downloads\arquivos\contas\0.txt";
-                        int count = File.ReadAllLines(diretorio).Count();
-                        Console.WriteLine("Há " + Convert.ToString(count) + " contas vinculadas a essa agência.\n");
+
+                        if (node == null) Console.WriteLine("Ops! não encontramos essa agencia!");
+                        else
+                        {
+                            diretorio = node.Value;
+                            int count = File.ReadAllLines(diretorio).Count();
+                            Console.WriteLine("Há " + Convert.ToString(count) + " contas vinculadas a essa agência.\n");
+                        }
                         break;
                     case 3:
                         Console.WriteLine("Há " + arvore.Count() + " agências vinculadas ao sistema.\n");
@@ -90,22 +98,26 @@ namespace AVLTree
                     case 4:
                         Console.WriteLine("Insira a agência que deseja buscar:");
                         agencia = Console.ReadLine().Trim();
-                        Console.WriteLine("Insira a conta vinculada a esta agência que deseja buscar:");
-                        conta = Console.ReadLine().Trim();
-
                         node = raiz.Search(int.Parse(agencia));
-                        diretorio = node.Value;
-                        //diretorio = @"C:\Users\Denes\Downloads\arquivos\contas\0.txt";
-                        BuscaArquivo(conta, diretorio);
 
-                        if (listaCorrespondencia.Count > 0)
+                        if (node == null) Console.WriteLine("Ops! Não encontramos essa agencia");
+                        else
                         {
-                            foreach (var item in listaCorrespondencia)
+                            Console.WriteLine("Insira a conta vinculada a esta agência que deseja buscar:");
+                            conta = Console.ReadLine().Trim();
+                        
+                            diretorio = node.Value;
+                            BuscaArquivo(conta, diretorio);
+
+                            if (listaCorrespondencia.Count > 0)
                             {
-                                Console.WriteLine("O cliente " + retornaCliente(item) + " possui " + retornaSaldoCliente(item)+ " em sua conta.\n");
+                                foreach (var item in listaCorrespondencia)
+                                {
+                                    Console.WriteLine("O cliente " + retornaCliente(item) + " possui " + retornaSaldoCliente(item) + " em sua conta.\n");
+                                }
                             }
+                            else Console.WriteLine("Não há clientes que possuem o número de conta procurado.");
                         }
-                        else Console.WriteLine("Não há clientes que possuem o número de conta procurado.");
                         break;
                     case 5:
                         return;
